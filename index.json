@@ -1,1 +1,23 @@
-[]
+[
+  {
+    "name": "Employee Management System",
+    "techstacks": [
+      {
+        "name": "Node.js",
+        "iconUrl": "https://cdn.simpleicons.org/nodedotjs"
+      },
+      {
+        "name": "PostgreSQL",
+        "iconUrl": "https://cdn.simpleicons.org/postgresql"
+      }
+    ],
+    "description": "Employee Management System with frontend, backend, and database.",
+    "iconUrl": "https://ui-avatars.com/api/?name=Employee+Management+System",
+    "services": [
+      "employee-info-app",
+      "employee-info-api",
+      "production-db"
+    ],
+    "filename": "employee-app-starter-pack.yml"
+  }
+]
