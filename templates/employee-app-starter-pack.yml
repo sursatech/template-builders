@@ -1,0 +1,63 @@
+version: "3.9"
+
+# 🔹 Main group metadata
+name: "Employee Management System"
+description: "Employee Management System with frontend, backend, and database."
+techstacks:
+  - name: Node.js
+    iconUrl: "https://cdn.simpleicons.org/nodedotjs"
+  - name: PostgreSQL
+    iconUrl: "https://cdn.simpleicons.org/postgresql"
+iconUrl: "https://ui-avatars.com/api/?name=Employee+Management+System"
+sharedVariable:
+  ENVIRONMENT: "production"
+  TIMEZONE: "UTC"
+
+services:
+  employee-info-app:
+    type: application
+    order: 1
+    serviceUrl: "https://github.com/sursatech/employee-info-app.git"
+    iconUrl: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg"
+    ports:
+      - "3000:3000"
+    buildConfig:
+      packages:
+        - "nodejs"
+      installCommand: "npm install"
+      startCommand: "npm run start"
+      ports:
+        - 3000
+
+  employee-info-api:
+    type: application
+    order: 2
+    serviceUrl: "https://github.com/sursatech/employee-info-api.git"
+    iconUrl: ""
+    buildConfig:
+      packages:
+        - "nodejs"
+      installCommand: "npm install"
+      startCommand: "npm run start"
+      ports:
+        - 3000
+
+  production-db:
+    type: database
+    order: 3
+    iconUrl: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/postgresql/postgresql-original.svg"
+    image: ghcr.io/railwayapp-templates/postgres-ssl:16
+    ports:
+      - "5432:5432"
+    volumes:
+      - db-data:/var/lib/postgresql/data
+    environment:
+      - DB_TYPE=postgres
+      - DB_VERSION=16
+      - POSTGRES_HOST=localhost
+      - POSTGRES_USER=user
+      - POSTGRES_PASSWORD=password
+      - POSTGRES_PORT=5432
+      - POSTGRES_DB=employee_info
+      - POSTGRES_SSL=true
+      - POSTGRES_INITDB_ARGS=--encoding=UTF-8 --lc-collate=C --lc-ctype=C
