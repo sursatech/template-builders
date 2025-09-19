@@ -34,6 +34,8 @@ services:
     order: 2
     serviceUrl: "https://github.com/sursatech/employee-info-api.git"
     iconUrl: ""
+    environment:
+      - DATABASE_URL=${connectionString_production-db}
     buildConfig:
       packages:
         - "nodejs"
