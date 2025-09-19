@@ -22,6 +22,15 @@ services:
     iconUrl: "https://avatars.githubusercontent.com/u/31845758?s=48&v=4"
     ports:
       - "80:80"
+    environment:
+      - ENVIRONMENT=production
+      - TIMEZONE=UTC
+      - DB_HOST=${host_mysql}
+      - DB_DATABASE=${env_mysql_MYSQL_DATABASE}
+      - DB_USERNAME=${env_mysql_MYSQL_USER}
+      - DB_PASSWORD=${env_mysql_MYSQL_PASSWORD}
+    volumes:
+      - "pos-data:/var/www/html"
     buildConfig:
       packages:
         - "php8.1"
@@ -31,15 +40,7 @@ services:
       startCommand: "apache2-foreground"
       ports:
         - "80:80"
-      environment:
-        - ENVIRONMENT=production
-        - TIMEZONE=UTC
-        - DB_HOST=${host_mysql}
-        - DB_DATABASE=${env_mysql_MYSQL_DATABASE}
-        - DB_USERNAME=${env_mysql_MYSQL_USER}
-        - DB_PASSWORD=${env_mysql_MYSQL_PASSWORD}
-      volumes:
-        - "pos-data:/var/www/html"
+      
 
   mysql:
     type: database
@@ -49,11 +50,10 @@ services:
     image: mysql:8.0
     ports:
       - "3306:3306"
-    buildConfig:
-      environment:
-        - MYSQL_ROOT_PASSWORD=password
-        - MYSQL_DATABASE=opensourcepos
-        - MYSQL_USER=opensourcepos
-        - MYSQL_PASSWORD=password
-      volumes:
-        - "mysql-data:/var/lib/mysql"
+    environment:
+      - MYSQL_ROOT_PASSWORD=password
+      - MYSQL_DATABASE=opensourcepos
+      - MYSQL_USER=opensourcepos
+      - MYSQL_PASSWORD=password
+    volumes:
+      - "mysql-data:/var/lib/mysql"
