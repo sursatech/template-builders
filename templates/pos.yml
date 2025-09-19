@@ -34,7 +34,7 @@ services:
       environment:
         - ENVIRONMENT=production
         - TIMEZONE=UTC
-        - DB_HOST=${env_mysql_MYSQL_HOST}
+        - DB_HOST=${host_mysql}
         - DB_DATABASE=${env_mysql_MYSQL_DATABASE}
         - DB_USERNAME=${env_mysql_MYSQL_USER}
         - DB_PASSWORD=${env_mysql_MYSQL_PASSWORD}
