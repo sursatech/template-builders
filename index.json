@@ -19,5 +19,33 @@
       "production-db"
     ],
     "filename": "employee-app-starter-pack.yml"
+  },
+  {
+    "name": "Open Source Point of Sale",
+    "techstacks": [
+      {
+        "name": "PHP",
+        "iconUrl": "https://cdn.simpleicons.org/php"
+      },
+      {
+        "name": "MySQL",
+        "iconUrl": "https://cdn.simpleicons.org/mysql"
+      },
+      {
+        "name": "CodeIgniter",
+        "iconUrl": "https://cdn.simpleicons.org/codeigniter"
+      },
+      {
+        "name": "Bootstrap",
+        "iconUrl": "https://cdn.simpleicons.org/bootstrap"
+      }
+    ],
+    "description": "Web-based point of sale application written in PHP using CodeIgniter framework with MySQL database and Bootstrap 3 UI.",
+    "iconUrl": "https://ui-avatars.com/api/?name=POS+System",
+    "services": [
+      "pos-system",
+      "mysql"
+    ],
+    "filename": "pos.yml"
   }
 ]
