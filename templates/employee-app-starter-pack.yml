@@ -21,6 +21,8 @@ services:
     iconUrl: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg"
     ports:
       - "3000:3000"
+    environment:
+      - API_URL=${domainUrl_employee-info-api}
     buildConfig:
       packages:
         - "nodejs"
@@ -39,7 +41,7 @@ services:
     buildConfig:
       packages:
         - "nodejs"
-      installCommand: "npm install"
+      installCommand: "npm install && npm run prisma:generate && npm run prisma:migrate -- --name \"initial_setup\""
       startCommand: "npm run dev"
       ports:
         - 3000
