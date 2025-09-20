@@ -22,7 +22,8 @@ services:
     ports:
       - "3000:3000"
     environment:
-      - API_URL=${domainUrl_employee-info-api}
+      - VITE_API_URL=${domainUrl_employee-info-api}
+      - __VITE_ADDITIONAL_SERVER_ALLOWED_HOSTS=".sursakit.app"
     buildConfig:
       packages:
         - "nodejs"
