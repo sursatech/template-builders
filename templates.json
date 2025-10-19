@@ -20,10 +20,10 @@
           "packages": ["node"],
           "ports": [5173]
         },
-        "environment": {
-          "VITE_API_URL": "{{API_URL}}",
-          "__VITE_ADDITIONAL_SERVER_ALLOWED_HOSTS": ".sursakit.app"
-        }
+        "environment": [
+          "VITE_API_URL={{API_URL}}",
+          "__VITE_ADDITIONAL_SERVER_ALLOWED_HOSTS=.sursakit.app"
+        ]
       },
       {
         "id": "react-vite-typescript-shadcn-starter",
@@ -45,10 +45,10 @@
           "packages": ["node"],
           "ports": [5173]
         },
-        "environment": {
-          "VITE_API_URL": "{{API_URL}}",
-          "__VITE_ADDITIONAL_SERVER_ALLOWED_HOSTS": ".sursakit.app"
-        }
+        "environment": [
+          "VITE_API_URL={{API_URL}}",
+          "__VITE_ADDITIONAL_SERVER_ALLOWED_HOSTS=.sursakit.app"
+        ]
       },
       {
         "id": "angular-typescript-starter",
@@ -70,9 +70,9 @@
           "packages": ["node"],
           "ports": [4200]
         },
-        "environment": {
-          "NG_API_URL": "{{API_URL}}"
-        }
+        "environment": [
+          "NG_API_URL={{API_URL}}"
+        ]
       },
       {
         "id": "angular-typescript-material-starter",
@@ -94,9 +94,9 @@
           "packages": ["node"],
           "ports": [4200]
         },
-        "environment": {
-          "NG_API_URL": "{{API_URL}}"
-        }
+        "environment": [
+          "NG_API_URL={{API_URL}}"
+        ]
       }
     ],
     "backend": [
@@ -120,11 +120,11 @@
           "packages": ["node"],
           "ports": [3000]
         },
-        "environment": {
-          "NODE_ENV": "development",
-          "PORT": "3000",
-          "DATABASE_URL": "${connectionString_postgres-db}"
-        }
+        "environment": [
+          "NODE_ENV=development",
+          "PORT=3000",
+          "DATABASE_URL=${connectionString_DATABASE}"
+        ]
       },
       {
         "id": "csharp-postgres-rest-api",
@@ -146,11 +146,11 @@
           "packages": ["dotnet"],
           "ports": [5000, 5001]
         },
-        "environment": {
-          "ASPNETCORE_ENVIRONMENT": "Development",
-          "ASPNETCORE_URLS": "http://0.0.0.0:5000",
-          "ConnectionStrings__DefaultConnection": "${connectionString_postgres-db}"
-        }
+        "environment": [
+          "ASPNETCORE_ENVIRONMENT=Development",
+          "ASPNETCORE_URLS=http://0.0.0.0:5000",
+          "ConnectionStrings__DefaultConnection=${connectionString_DATABASE}"
+        ]
       }
     ]
   }
