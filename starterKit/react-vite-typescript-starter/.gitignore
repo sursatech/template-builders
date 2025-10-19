@@ -1,0 +1,31 @@
+# Logs
+logs
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+lerna-debug.log*
+
+node_modules
+dist
+dist-ssr
+*.local
+
+# Lock files - this starter uses npm (package-lock.json is committed)
+# If you prefer another package manager, remove package-lock.json and commit your preferred lock file:
+# yarn.lock (for yarn)
+# pnpm-lock.yaml (for pnpm)
+# bun.lockb (for bun)
+
+# Editor directories and files
+.vscode/*
+!.vscode/extensions.json
+.idea
+.DS_Store
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.sw?
+

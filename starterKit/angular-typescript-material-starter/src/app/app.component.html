@@ -1,0 +1,71 @@
+<mat-toolbar color="primary" class="toolbar">
+  <mat-icon class="logo-icon">android</mat-icon>
+  <span class="toolbar-title">{{ title }}</span>
+  <span class="toolbar-spacer"></span>
+  <button mat-icon-button>
+    <mat-icon>more_vert</mat-icon>
+  </button>
+</mat-toolbar>
+
+<div class="container">
+  <header class="header">
+    <h1>Welcome to Angular Material</h1>
+    <p class="subtitle">A modern starter template with Material Design</p>
+    <div class="header-actions">
+      <button mat-raised-button color="primary">
+        <mat-icon>rocket_launch</mat-icon>
+        Get Started
+      </button>
+      <button mat-stroked-button>
+        <mat-icon>library_books</mat-icon>
+        Documentation
+      </button>
+    </div>
+  </header>
+
+  <section class="features">
+    <h2>Features</h2>
+    <div class="features-grid">
+      <mat-card *ngFor="let feature of features" class="feature-card" appearance="outlined">
+        <mat-card-header>
+          <mat-icon mat-card-avatar [color]="feature.color">{{ feature.icon }}</mat-icon>
+          <mat-card-title>{{ feature.name }}</mat-card-title>
+        </mat-card-header>
+        <mat-card-content>
+          <p>{{ feature.description }}</p>
+        </mat-card-content>
+      </mat-card>
+    </div>
+  </section>
+
+  <section class="getting-started">
+    <mat-card appearance="outlined">
+      <mat-card-header>
+        <mat-icon mat-card-avatar color="primary">lightbulb</mat-icon>
+        <mat-card-title>Get Started</mat-card-title>
+        <mat-card-subtitle>Everything you need to build amazing apps</mat-card-subtitle>
+      </mat-card-header>
+      <mat-card-content>
+        <p>This template includes Angular Material with 40+ production-ready components:</p>
+        <div class="chips-container">
+          <mat-chip-set>
+            <mat-chip *ngFor="let component of componentExamples">
+              {{ component }}
+            </mat-chip>
+          </mat-chip-set>
+        </div>
+        <p class="note">
+          <mat-icon>info</mat-icon>
+          All components are tree-shakeable and fully customizable with Material theming.
+        </p>
+      </mat-card-content>
+      <mat-card-actions align="end">
+        <button mat-button color="primary">LEARN MORE</button>
+        <button mat-raised-button color="primary">START BUILDING</button>
+      </mat-card-actions>
+    </mat-card>
+  </section>
+</div>
+
+<router-outlet />
+
