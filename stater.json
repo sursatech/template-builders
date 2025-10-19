@@ -1,0 +1,31 @@
+{
+    "frontend": [
+      {
+        "id": "react-vite-typescript-starter",
+        "name": "React + Vite + TypeScript (Minimal)",
+        "githubUrl": "https://github.com/sursatech/template-builders/tree/stater-tempate/starterKit/react-vite-typescript-starter"
+      },
+      {
+        "id": "react-vite-typescript-shadcn-starter",
+        "name": "React + Vite + TypeScript + Shadcn UI",
+        "githubUrl": "https://github.com/sursatech/template-builders/tree/stater-tempate/starterKit/react-vite-typescript-shadcn-starter"
+      },
+      {
+        "id": "angular-typescript-starter",
+        "name": "Angular + TypeScript (Minimal)",
+        "githubUrl": "https://github.com/sursatech/template-builders/tree/stater-tempate/starterKit/angular-typescript-starter"
+      },
+      {
+        "id": "angular-typescript-material-starter",
+        "name": "Angular + TypeScript + Material Design",
+        "githubUrl": "https://github.com/sursatech/template-builders/tree/stater-tempate/starterKit/angular-typescript-material-starter"
+      }
+    ],
+    "backend": [
+      {
+        "id": "node-express-typescript-starter",
+        "name": "Node.js + Express + TypeScript",
+        "githubUrl": "https://github.com/jsynowiec/node-typescript-boilerplate.git"
+      }
+    ]
+  }
