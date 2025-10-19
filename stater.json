@@ -26,6 +26,11 @@
         "id": "node-express-typescript-starter",
         "name": "Node.js + Express + TypeScript",
         "githubUrl": "https://github.com/jsynowiec/node-typescript-boilerplate.git"
+      },
+      {
+        "id": "csharp-postgres-rest-api",
+        "name": ".NET 8 + C# + PostgreSQL REST API",
+        "githubUrl": "https://github.com/sursatech/template-builders/tree/main/starterKit/csharp-postgres-rest-api"
       }
     ]
   }
