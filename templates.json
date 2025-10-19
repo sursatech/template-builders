@@ -123,7 +123,7 @@
         "environment": [
           "NODE_ENV=development",
           "PORT=3000",
-          "DATABASE_URL=${connectionString_DATABASE}"
+          "DATABASE_URL=${connectionString_postgres-db}"
         ]
       },
       {
@@ -149,7 +149,7 @@
         "environment": [
           "ASPNETCORE_ENVIRONMENT=Development",
           "ASPNETCORE_URLS=http://0.0.0.0:5000",
-          "ConnectionStrings__DefaultConnection=${connectionString_DATABASE}"
+          "ConnectionStrings__DefaultConnection=${connectionString_postgres-db}"
         ]
       }
     ]
