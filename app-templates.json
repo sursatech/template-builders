@@ -149,5 +149,47 @@
       "ASPNETCORE_URLS=http://0.0.0.0:5000",
       "ConnectionStrings__DefaultConnection=${connectionString_postgres-db}"
     ]
-  }
+  },
+  {
+  "id": "postgres-db",
+  "name": "PostgreSQL 16",
+  "description": "Production-grade PostgreSQL 16 database with SSL enabled and persistent volume storage.",
+  "image": "ghcr.io/railwayapp-templates/postgres-ssl:16",
+  "language": "sql",
+  "tags": ["database", "postgres", "sql", "ssl"],
+  "difficulty": "intermediate",
+  "author": "Railway Template",
+  "features": [
+    "PostgreSQL 16",
+    "SSL Support",
+    "Persistent Volume",
+    "UTF-8 Encoding",
+    "Custom Collation"
+  ],
+  "useCases": [
+    "web-app-backend",
+    "data-storage",
+    "api-database",
+    "production-environment"
+  ],
+  "defaultPorts": [5432],
+  "requirements": ["Docker", "Railway CLI"],
+  "buildConfig": {
+    "ports": [5432],
+    "volumes": ["db-data:/var/lib/postgresql/data"]
+  },
+  "environment": {
+    "DB_TYPE": "postgres",
+    "DB_VERSION": "16",
+    "POSTGRES_HOST": "${host_db-service-name}",
+    "POSTGRES_USER": "user",
+    "POSTGRES_PASSWORD": "password",
+    "POSTGRES_PORT": "5432",
+    "POSTGRES_DB": "employee_info",
+    "POSTGRES_SSL": "true",
+    "POSTGRES_INITDB_ARGS": "--encoding=UTF-8 --lc-collate=C --lc-ctype=C"
+  },
+  "iconUrl": "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/postgresql/postgresql-original.svg"
+}
+
 ]
