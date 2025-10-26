@@ -1,0 +1,177 @@
+[
+  {
+    "id": "react-vite-typescript-starter",
+    "name": "React + Vite + TypeScript (Minimal)",
+    "description": "Minimal React starter with Vite and TypeScript",
+    "githubUrl": "https://github.com/sursakit-template/react-vite-typescript-starter.git",
+    "language": "typescript",
+    "framework": "react",
+    "tags": ["react", "vite", "typescript", "spa", "minimal", "frontend"],
+    "difficulty": "beginner",
+    "author": "Sursakit",
+    "features": ["TypeScript", "Vite", "Hot Reload", "ESLint", "Prettier"],
+    "useCases": ["spa", "dashboard", "admin-panel", "web-app", "frontend"],
+    "defaultPorts": [5173],
+    "requirements": ["Node.js 18+", "npm or bun"],
+    "buildConfig": {
+      "installCommand": "npm install",
+      "startCommand": "npm run dev -- --host 0.0.0.0",
+      "packages": ["node"],
+      "ports": [5173]
+    },
+    "environment": [
+      "VITE_API_URL=${domainUrl_api-backend}",
+      "__VITE_ADDITIONAL_SERVER_ALLOWED_HOSTS=.sursakit.app"
+    ]
+  },
+  {
+    "id": "react-vite-typescript-starter",
+    "name": "React + Vite + TypeScript (Minimal)",
+    "description": "Minimal React starter with Vite and TypeScript",
+    "githubUrl": "https://github.com/sursakit-template/react-vite-typescript-starter.git",
+    "language": "typescript",
+    "framework": "react",
+    "tags": ["react", "vite", "typescript", "spa", "minimal", "frontend"],
+    "difficulty": "beginner",
+    "author": "Sursakit",
+    "features": ["TypeScript", "Vite", "Hot Reload", "ESLint", "Prettier"],
+    "useCases": ["spa", "dashboard", "admin-panel", "web-app"],
+    "defaultPorts": [5173],
+    "requirements": ["Node.js 18+", "npm or bun"],
+    "buildConfig": {
+      "installCommand": "npm install",
+      "startCommand": "npm run dev -- --host 0.0.0.0",
+      "packages": ["node"],
+      "ports": [5173]
+    },
+    "environment": [
+      "VITE_API_URL=${domainUrl_api-backend}",
+      "__VITE_ADDITIONAL_SERVER_ALLOWED_HOSTS=.sursakit.app"
+    ]
+  },
+  {
+    "id": "react-vite-typescript-shadcn-starter",
+    "name": "React + Vite + TypeScript + Shadcn UI",
+    "description": "Modern React starter with Vite, TypeScript, and Shadcn UI components",
+    "githubUrl": "https://github.com/sursakit-template/react-vite-typescript-shadcn-starter.git",
+    "language": "typescript",
+    "framework": "react",
+    "tags": ["react", "vite", "typescript", "shadcn", "ui", "tailwind"],
+    "difficulty": "beginner",
+    "author": "Sursakit",
+    "features": ["TypeScript", "Vite", "Shadcn UI", "Tailwind CSS", "Dark Mode"],
+    "useCases": ["spa", "dashboard", "admin-panel", "saas"],
+    "defaultPorts": [5173],
+    "requirements": ["Node.js 18+"],
+    "buildConfig": {
+      "installCommand": "npm install",
+      "startCommand": "npm run dev -- --host 0.0.0.0",
+      "packages": ["node"],
+      "ports": [5173]
+    },
+    "environment": [
+      "VITE_API_URL=${domainUrl_api-backend}",
+      "__VITE_ADDITIONAL_SERVER_ALLOWED_HOSTS=.sursakit.app"
+    ]
+  },
+  {
+    "id": "angular-typescript-starter",
+    "name": "Angular + TypeScript (Minimal)",
+    "description": "Clean Angular starter with TypeScript",
+    "githubUrl": "https://github.com/sursakit-template/angular-typescript-starter.git",
+    "language": "typescript",
+    "framework": "angular",
+    "tags": ["angular", "typescript", "spa", "minimal", "frontend"],
+    "difficulty": "intermediate",
+    "author": "Sursakit",
+    "features": ["TypeScript", "Angular CLI", "RxJS", "Routing"],
+    "useCases": ["spa", "enterprise-app", "dashboard"],
+    "defaultPorts": [4200],
+    "requirements": ["Node.js 18+", "Angular CLI"],
+    "buildConfig": {
+      "installCommand": "npm install",
+      "startCommand": "npm start -- --host 0.0.0.0 --port 4200",
+      "packages": ["node"],
+      "ports": [4200]
+    },
+    "environment": [
+      "NG_API_URL=${domainUrl_api-backend}"
+    ]
+  },
+  {
+    "id": "angular-typescript-material-starter",
+    "name": "Angular + TypeScript + Material Design",
+    "description": "Angular starter with Material Design components",
+    "githubUrl": "https://github.com/sursakit-template/angular-typescript-material-starter.git",
+    "language": "typescript",
+    "framework": "angular",
+    "tags": ["angular", "typescript", "material", "ui", "spa", "frontend"],
+    "difficulty": "intermediate",
+    "author": "Sursakit",
+    "features": ["TypeScript", "Angular Material", "Responsive Design", "Theming"],
+    "useCases": ["spa", "enterprise-app", "dashboard", "admin-panel"],
+    "defaultPorts": [4200],
+    "requirements": ["Node.js 18+", "Angular CLI"],
+    "buildConfig": {
+      "installCommand": "npm install",
+      "startCommand": "npm start -- --host 0.0.0.0 --port 4200",
+      "packages": ["node"],
+      "ports": [4200]
+    },
+    "environment": [
+      "NG_API_URL=${domainUrl_api-backend}"
+    ]
+  },
+  {
+    "id": "node-express-typescript-starter",
+    "name": "Node.js + Express + TypeScript",
+    "description": "Express TypeScript server for REST APIs",
+    "githubUrl": "https://github.com/jsynowiec/node-typescript-boilerplate.git",
+    "language": "typescript",
+    "framework": "express",
+    "tags": ["nodejs", "express", "typescript", "api", "rest", "backend"],
+    "difficulty": "beginner",
+    "author": "Community",
+    "features": ["TypeScript", "Express.js", "REST API", "Middleware Support"],
+    "useCases": ["api", "backend", "rest-api", "microservice"],
+    "defaultPorts": [3000],
+    "requirements": ["Node.js 18+"],
+    "buildConfig": {
+      "installCommand": "npm install",
+      "startCommand": "npm start",
+      "packages": ["node"],
+      "ports": [3000]
+    },
+    "environment": [
+      "NODE_ENV=development",
+      "PORT=3000",
+      "DATABASE_URL=${connectionString_postgres-db}"
+    ]
+  },
+  {
+    "id": "csharp-postgres-rest-api",
+    "name": ".NET 8 + C# + PostgreSQL REST API",
+    "description": "Modern .NET 8 API with Entity Framework and PostgreSQL",
+    "githubUrl": "https://github.com/sursakit-template/csharp-postgres-rest-api.git",
+    "language": "csharp",
+    "framework": "dotnet",
+    "tags": ["dotnet", "csharp", "postgresql", "api", "entity-framework", "backend"],
+    "difficulty": "intermediate",
+    "author": "Sursakit",
+    "features": [".NET 8", "Entity Framework Core", "PostgreSQL", "RESTful API", "Swagger"],
+    "useCases": ["api", "backend", "enterprise", "crud"],
+    "defaultPorts": [5000, 5001],
+    "requirements": [".NET 8 SDK", "PostgreSQL"],
+    "buildConfig": {
+      "installCommand": "dotnet restore",
+      "startCommand": "dotnet run --urls http://0.0.0.0:5000",
+      "packages": ["dotnet"],
+      "ports": [5000, 5001]
+    },
+    "environment": [
+      "ASPNETCORE_ENVIRONMENT=Development",
+      "ASPNETCORE_URLS=http://0.0.0.0:5000",
+      "ConnectionStrings__DefaultConnection=${connectionString_postgres-db}"
+    ]
+  }
+]
