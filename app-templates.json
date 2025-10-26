@@ -1,29 +1,5 @@
 [
-  {
-    "id": "react-vite-typescript-starter",
-    "name": "React + Vite + TypeScript (Minimal)",
-    "description": "Minimal React starter with Vite and TypeScript",
-    "githubUrl": "https://github.com/sursakit-template/react-vite-typescript-starter.git",
-    "language": "typescript",
-    "framework": "react",
-    "tags": ["react", "vite", "typescript", "spa", "minimal", "frontend"],
-    "difficulty": "beginner",
-    "author": "Sursakit",
-    "features": ["TypeScript", "Vite", "Hot Reload", "ESLint", "Prettier"],
-    "useCases": ["spa", "dashboard", "admin-panel", "web-app", "frontend"],
-    "defaultPorts": [5173],
-    "requirements": ["Node.js 18+", "npm or bun"],
-    "buildConfig": {
-      "installCommand": "npm install",
-      "startCommand": "npm run dev -- --host 0.0.0.0",
-      "packages": ["node"],
-      "ports": [5173]
-    },
-    "environment": [
-      "VITE_API_URL=${domainUrl_api-backend}",
-      "__VITE_ADDITIONAL_SERVER_ALLOWED_HOSTS=.sursakit.app"
-    ]
-  },
+ 
   {
     "id": "react-vite-typescript-starter",
     "name": "React + Vite + TypeScript (Minimal)",
@@ -41,7 +17,7 @@
     "buildConfig": {
       "installCommand": "npm install",
       "startCommand": "npm run dev -- --host 0.0.0.0",
-      "packages": ["node"],
+      "packages": ["node@22"],
       "ports": [5173]
     },
     "environment": [
@@ -66,7 +42,7 @@
     "buildConfig": {
       "installCommand": "npm install",
       "startCommand": "npm run dev -- --host 0.0.0.0",
-      "packages": ["node"],
+      "packages": ["node@22"],
       "ports": [5173]
     },
     "environment": [
@@ -91,7 +67,7 @@
     "buildConfig": {
       "installCommand": "npm install",
       "startCommand": "npm start -- --host 0.0.0.0 --port 4200",
-      "packages": ["node"],
+      "packages": ["node@22"],
       "ports": [4200]
     },
     "environment": [
@@ -115,7 +91,7 @@
     "buildConfig": {
       "installCommand": "npm install",
       "startCommand": "npm start -- --host 0.0.0.0 --port 4200",
-      "packages": ["node"],
+      "packages": ["node@22"],
       "ports": [4200]
     },
     "environment": [
@@ -139,7 +115,7 @@
     "buildConfig": {
       "installCommand": "npm install",
       "startCommand": "npm start",
-      "packages": ["node"],
+      "packages": ["node@22"],
       "ports": [3000]
     },
     "environment": [
