@@ -2,6 +2,8 @@
  
   {
     "id": "react-vite-typescript-starter",
+    "type":"application",
+
     "name": "React + Vite + TypeScript (Minimal)",
     "description": "Minimal React starter with Vite and TypeScript",
     "githubUrl": "https://github.com/sursakit-template/react-vite-typescript-starter.git",
@@ -27,6 +29,8 @@
   },
   {
     "id": "react-vite-typescript-shadcn-starter",
+    "type":"application",
+
     "name": "React + Vite + TypeScript + Shadcn UI",
     "description": "Modern React starter with Vite, TypeScript, and Shadcn UI components",
     "githubUrl": "https://github.com/sursakit-template/react-vite-typescript-shadcn-starter.git",
@@ -52,6 +56,8 @@
   },
   {
     "id": "angular-typescript-starter",
+    "type":"application",
+
     "name": "Angular + TypeScript (Minimal)",
     "description": "Clean Angular starter with TypeScript",
     "githubUrl": "https://github.com/sursakit-template/angular-typescript-starter.git",
@@ -76,6 +82,8 @@
   },
   {
     "id": "angular-typescript-material-starter",
+    "type":"application",
+
     "name": "Angular + TypeScript + Material Design",
     "description": "Angular starter with Material Design components",
     "githubUrl": "https://github.com/sursakit-template/angular-typescript-material-starter.git",
@@ -100,6 +108,7 @@
   },
   {
     "id": "node-express-typescript-starter",
+    "type":"application",
     "name": "Node.js + Express + TypeScript",
     "description": "Express TypeScript server for REST APIs",
     "githubUrl": "https://github.com/jsynowiec/node-typescript-boilerplate.git",
@@ -126,6 +135,7 @@
   },
   {
     "id": "csharp-postgres-rest-api",
+    "type":"application",
     "name": ".NET 8 + C# + PostgreSQL REST API",
     "description": "Modern .NET 8 API with Entity Framework and PostgreSQL",
     "githubUrl": "https://github.com/sursakit-template/csharp-postgres-rest-api.git",
@@ -152,6 +162,7 @@
   },
   {
   "id": "postgres-db",
+  "type":"database",
   "name": "PostgreSQL 16",
   "description": "Production-grade PostgreSQL 16 database with SSL enabled and persistent volume storage.",
   "image": "ghcr.io/railwayapp-templates/postgres-ssl:16",
