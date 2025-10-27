@@ -173,14 +173,14 @@
     "author": "Sursakit",
     "features": ["FastAPI", "PostgreSQL", "SQLAlchemy", "Pydantic", "REST API", "Swagger"],
     "useCases": ["api", "backend", "rest-api", "crud", "microservice"],
-    "defaultPorts": [5000],
+    "defaultPorts": [8000],
     "requirements": ["Python 3.9+", "PostgreSQL"],
     "buildConfig": {
-      "installCommand": "python -m venv venv && source venv/bin/activate && pip install -r requirements.txt",
-      "startCommand": "source venv/bin/activate && uvicorn app.main:app --reload --host 0.0.0.0 --port 5000",
+      "installCommand": "python3 -m venv venv && source venv/bin/activate && pip install -r requirements.txt",
+      "startCommand": "source venv/bin/activate && uvicorn app.main:app --reload --host 0.0.0.0 --port 8000",
       "packages": ["python@3.14"],
       "aptPackages": ["build-essential", "g++", "gcc", "libc6-dev", "libpq-dev", "python3-dev", "libpq5"],
-      "ports": [5000]
+      "ports": [8000]
     },
     "environment": [
       "DATABASE_URL=${connectionString_postgres-db}"
