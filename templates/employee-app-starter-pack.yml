@@ -22,7 +22,7 @@ services:
     ports:
       - "3000:3000"
     environment:
-      - VITE_API_URL=${domainUrl_employee-info-api}
+      - VITE_API_URL=${domainUrl::employee-info-api}
       - __VITE_ADDITIONAL_SERVER_ALLOWED_HOSTS=.sursakit.app
     buildConfig:
       packages:
@@ -38,7 +38,7 @@ services:
     serviceUrl: "https://github.com/sursatech/employee-info-api.git"
     iconUrl: ""
     environment:
-      - DATABASE_URL=${connectionString_production-db}
+      - DATABASE_URL=postgresql://${env::production-db::POSTGRES_USER}:${env::production-db::POSTGRES_PASSWORD}@${host::production-db}/${env::production-db::POSTGRES_DB}
     buildConfig:
       packages:
         - "node@22"
@@ -57,7 +57,7 @@ services:
     volumes:
       - db-data:/var/lib/postgresql/data
     environment:
-      - DB_HOST=${host_production-db}
+      - DB_HOST=${host::production-db}
       - DB_TYPE=postgres
       - POSTGRES_USER=user
       - POSTGRES_PASSWORD=password

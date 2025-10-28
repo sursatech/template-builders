@@ -55,10 +55,10 @@ services:
     serviceUrl: "https://example.com/service.zip"  # Download URL for service code
     iconUrl: "https://example.com/service-icon.png"  # Service-specific icon
     environment:                              # Environment variables with dynamic references
-      API_URL: ${domainUrl_other-service}    # Reference other service domains
-      DB_HOST: ${host_database-service}      # Reference container hostnames
-      DATABASE_URL: ${connectionString_db}   # Reference connection strings
-      DB_USER: ${env_database_POSTGRES_USER} # Reference specific env vars from other services
+      API_URL: ${domainUrl::other-service}    # Reference other service domains
+      DB_HOST: ${host::database-service}      # Reference container hostnames
+      DATABASE_URL: postgresql://${env::db::POSTGRES_USER}:${env::db::POSTGRES_PASSWORD}@${host::db}/${env::db::POSTGRES_DB}   # Explicit PostgreSQL connection string
+      DB_USER: ${env::database::POSTGRES_USER} # Reference specific env vars from other services
     buildConfig:                              # Build configuration details
       packages:                               # Package dependencies
         - "package-name"
@@ -146,8 +146,8 @@ services:
     ports:
       - "3000:3000"
     environment:
-      API_URL: ${domainUrl_backend-api}  # References backend domain
-      APP_URL: ${domainUrl_frontend}     # References frontend domain
+      API_URL: ${domainUrl::backend-api}  # References backend domain
+      APP_URL: ${domainUrl::frontend}     # References frontend domain
     buildConfig:
       packages:
         - "react"
@@ -168,12 +168,12 @@ services:
     ports:
       - "5000:5000"
     environment:
-      DATABASE_URL: ${connectionString_production-db}  # Complete DB connection string
-      DB_HOST: ${host_production-db}                   # DB container hostname
-      DB_USER: ${env_production-db_POSTGRES_USER}      # DB username from DB service
-      DB_PASSWORD: ${env_production-db_POSTGRES_PASSWORD}  # DB password from DB service
-      API_URL: ${domainUrl_backend-api}                # Backend domain
-      APP_URL: ${domainUrl_frontend}                   # Frontend domain
+      DATABASE_URL: postgresql://${env::production-db::POSTGRES_USER}:${env::production-db::POSTGRES_PASSWORD}@${host::production-db}/${env::production-db::POSTGRES_DB}  # Explicit PostgreSQL connection string
+      DB_HOST: ${host::production-db}                   # DB container hostname
+      DB_USER: ${env::production-db::POSTGRES_USER}      # DB username from DB service
+      DB_PASSWORD: ${env::production-db::POSTGRES_PASSWORD}  # DB password from DB service
+      API_URL: ${domainUrl::backend-api}                # Backend domain
+      APP_URL: ${domainUrl::frontend}                   # Frontend domain
     buildConfig:
       packages:
         - "express"
@@ -199,7 +199,7 @@ services:
       POSTGRES_USER: postgres
       POSTGRES_PASSWORD: secretpassword
       POSTGRES_DB: myapp
-      POSTGRES_HOST: ${host_production-db}  # Container hostname
+      POSTGRES_HOST: ${host::production-db}  # Container hostname
 ```
 
 ## 🔧 Key Differences from Standard Docker Compose
@@ -228,35 +228,28 @@ Our templates use a special environment variable syntax that allows services to 
 
 #### 1. Domain URL Reference
 ```yaml
-${domainUrl_SERVICENAME}
+${domainUrl::SERVICENAME}
 ```
 - **Purpose**: References the domain URL of a specific service
-- **Example**: `${domainUrl_employee-info-api}` → `https://api.example.com`
+- **Example**: `${domainUrl::employee-info-api}` → `https://api.example.com`
 - **Usage**: Used when services need to communicate via HTTP/HTTPS
 
 #### 2. Host Reference
 ```yaml
-${host_SERVICENAME}
+${host::SERVICENAME}
 ```
 - **Purpose**: References the container hostname of a specific service
-- **Example**: `${host_production-db}` → `production-db`
+- **Example**: `${host::production-db}` → `production-db`
 - **Usage**: Used for internal container-to-container communication
 
-#### 3. Database Connection String
+#### 3. Service Environment Variable Reference
 ```yaml
-${connectionString_SERVICENAME}
-```
-- **Purpose**: References the complete database connection string
-- **Example**: `${connectionString_production-db}` → `postgresql://user:password@host:5432/database`
-- **Usage**: Used when services need to connect to databases
-
-#### 4. Service Environment Variable Reference
-```yaml
-${env_SERVICENAME_ENV_VARIABLE_NAME}
+${env::SERVICENAME::ENV_VARIABLE_NAME}
 ```
 - **Purpose**: References a specific environment variable from another service
-- **Example**: `${env_production-db_POSTGRES_USER}` → `postgres`
+- **Example**: `${env::production-db::POSTGRES_USER}` → `postgres`
 - **Usage**: Used to access specific configuration values from other services
+- **PostgreSQL Connection Example**: `postgresql://${env::production-db::POSTGRES_USER}:${env::production-db::POSTGRES_PASSWORD}@${host::production-db}/${env::production-db::POSTGRES_DB}` → `postgresql://user:password@production-db:5432/database`
 
 ### Real-World Example
 
@@ -266,15 +259,15 @@ Here's how these patterns work in practice:
 services:
   frontend:
     environment:
-      API_URL: ${domainUrl_backend-api}  # Points to backend's domain
-      APP_URL: ${domainUrl_frontend}     # Points to frontend's domain
+      API_URL: ${domainUrl::backend-api}  # Points to backend's domain
+      APP_URL: ${domainUrl::frontend}     # Points to frontend's domain
 
   backend-api:
     environment:
-      DATABASE_URL: ${connectionString_production-db}  # Complete DB connection
-      DB_HOST: ${host_production-db}                   # DB container hostname
-      DB_USER: ${env_production-db_POSTGRES_USER}      # DB username from DB service
-      DB_PASSWORD: ${env_production-db_POSTGRES_PASSWORD}  # DB password from DB service
+      DATABASE_URL: postgresql://${env::production-db::POSTGRES_USER}:${env::production-db::POSTGRES_PASSWORD}@${host::production-db}/${env::production-db::POSTGRES_DB}  # Explicit PostgreSQL connection
+      DB_HOST: ${host::production-db}                   # DB container hostname
+      DB_USER: ${env::production-db::POSTGRES_USER}      # DB username from DB service
+      DB_PASSWORD: ${env::production-db::POSTGRES_PASSWORD}  # DB password from DB service
 
   production-db:
     environment:
