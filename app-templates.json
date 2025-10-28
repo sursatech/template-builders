@@ -146,13 +146,13 @@
     "author": "Sursakit",
     "features": [".NET 8", "Entity Framework Core", "PostgreSQL", "RESTful API", "Swagger"],
     "useCases": ["api", "backend", "enterprise", "crud"],
-    "defaultPorts": [5000, 5001],
+    "defaultPorts": [5000],
     "requirements": [".NET 8 SDK", "PostgreSQL"],
     "buildConfig": {
-      "installCommand": "dotnet restore",
-      "startCommand": "dotnet run --urls http://0.0.0.0:5000",
+      "installCommand": "dotnet restore && dotnet tool restore && cd WebAPI && dotnet ef migrations add InitialCreate && dotnet ef database update && cd ..",
+      "startCommand": "dotnet run --project WebAPI --urls \"http://0.0.0.0:5000\"",
       "packages": ["dotnet"],
-      "ports": [5000, 5001]
+      "ports": [5000]
     },
     "environment": [
       "ASPNETCORE_ENVIRONMENT=Development",
