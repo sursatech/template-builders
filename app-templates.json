@@ -151,7 +151,7 @@
     "buildConfig": {
       "installCommand": "dotnet restore && dotnet tool restore && cd WebAPI && dotnet ef migrations add InitialCreate && dotnet ef database update && cd ..",
       "startCommand": "dotnet run --project WebAPI --urls \"http://0.0.0.0:5000\"",
-      "packages": ["dotnet"],
+      "packages": ["dotnet@9"],
       "ports": [5000]
     },
     "environment": [
