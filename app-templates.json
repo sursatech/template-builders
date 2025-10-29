@@ -111,7 +111,7 @@
     "type":"application",
     "name": "Node.js + Express + TypeScript",
     "description": "Express TypeScript server for REST APIs",
-    "githubUrl": "https://github.com/jsynowiec/node-typescript-boilerplate.git",
+    "githubUrl": "https://github.com/sursatech/employee-info-api.git",
     "language": "typescript",
     "framework": "express",
     "tags": ["nodejs", "express", "typescript", "api", "rest", "backend"],
@@ -122,8 +122,8 @@
     "defaultPorts": [3000],
     "requirements": ["Node.js 18+"],
     "buildConfig": {
-      "installCommand": "npm install",
-      "startCommand": "npm start",
+      "installCommand": "npm install && npm run prisma:generate && npm run prisma:migrate -- --name \"initial_setup\"",
+      "startCommand": "npm run dev",
       "packages": ["node@22"],
       "ports": [3000]
     },
@@ -146,13 +146,13 @@
     "author": "Sursakit",
     "features": [".NET 8", "Entity Framework Core", "PostgreSQL", "RESTful API", "Swagger"],
     "useCases": ["api", "backend", "enterprise", "crud"],
-    "defaultPorts": [5000, 5001],
+    "defaultPorts": [5000],
     "requirements": [".NET 8 SDK", "PostgreSQL"],
     "buildConfig": {
-      "installCommand": "dotnet restore",
-      "startCommand": "dotnet run --urls http://0.0.0.0:5000",
-      "packages": ["dotnet"],
-      "ports": [5000, 5001]
+      "installCommand": "dotnet restore && dotnet tool restore",
+      "startCommand": "dotnet run --project WebAPI --urls \"http://0.0.0.0:5000\"",
+      "packages": ["dotnet@8.0"],
+      "ports": [5000]
     },
     "environment": [
       "ASPNETCORE_ENVIRONMENT=Development",
