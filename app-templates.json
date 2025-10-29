@@ -218,7 +218,7 @@
   "environment": {
     "DB_TYPE": "postgres",
     "DB_VERSION": "16",
-    "DB_HOST": "${host::db-service-name}",
+    "DB_HOST": "${host::postgres-db}",
     "POSTGRES_USER": "user",
     "POSTGRES_PASSWORD": "password",
     "POSTGRES_DB": "${variable_database-name}",
