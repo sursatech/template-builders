@@ -23,7 +23,7 @@
       "ports": [5173]
     },
     "environment": [
-      "VITE_API_URL=${domainUrl_api-backend}",
+      "VITE_API_URL=${domainUrl::api-backend}",
       "__VITE_ADDITIONAL_SERVER_ALLOWED_HOSTS=.sursakit.app"
     ]
   },
@@ -50,7 +50,7 @@
       "ports": [5173]
     },
     "environment": [
-      "VITE_API_URL=${domainUrl_api-backend}",
+      "VITE_API_URL=${domainUrl::api-backend}",
       "__VITE_ADDITIONAL_SERVER_ALLOWED_HOSTS=.sursakit.app"
     ]
   },
@@ -77,7 +77,7 @@
       "ports": [4200]
     },
     "environment": [
-      "NG_API_URL=${domainUrl_api-backend}"
+      "NG_API_URL=${domainUrl::api-backend}"
     ]
   },
   {
@@ -103,7 +103,7 @@
       "ports": [4200]
     },
     "environment": [
-      "NG_API_URL=${domainUrl_api-backend}"
+      "NG_API_URL=${domainUrl::api-backend}"
     ]
   },
   {
@@ -130,7 +130,7 @@
     "environment": [
       "NODE_ENV=development",
       "PORT=3000",
-      "DATABASE_URL=${connectionString_postgres-db}"
+      "DATABASE_URL=postgresql://${env::postgres-db::POSTGRES_USER}:${env::postgres-db::POSTGRES_PASSWORD}@${host::postgres-db}/${env::postgres-db::POSTGRES_DB}"
     ]
   },
   {
@@ -157,7 +157,7 @@
     "environment": [
       "ASPNETCORE_ENVIRONMENT=Development",
       "ASPNETCORE_URLS=http://0.0.0.0:5000",
-      "ConnectionStrings__DefaultConnection=${connectionString_postgres-db}"
+      "ConnectionStrings__DefaultConnection=postgresql://${env::postgres-db::POSTGRES_USER}:${env::postgres-db::POSTGRES_PASSWORD}@${host::postgres-db}/${env::postgres-db::POSTGRES_DB}"
     ]
   },
   {
@@ -183,7 +183,7 @@
       "ports": [8000]
     },
     "environment": [
-      "DATABASE_URL=${connectionString_postgres-db}"
+      "DATABASE_URL=postgresql://${env::postgres-db::POSTGRES_USER}:${env::postgres-db::POSTGRES_PASSWORD}@${host::postgres-db}/${env::postgres-db::POSTGRES_DB}"
     ]
   },
   {
@@ -217,14 +217,10 @@
   },
   "environment": {
     "DB_TYPE": "postgres",
-    "DB_VERSION": "16",
-    "POSTGRES_HOST": "${host_db-service-name}",
+    "DB_HOST": "${host::postgres-db}",
     "POSTGRES_USER": "user",
     "POSTGRES_PASSWORD": "password",
-    "POSTGRES_PORT": "5432",
-    "POSTGRES_DB": "${variable_database-name}",
-    "POSTGRES_SSL": "true",
-    "POSTGRES_INITDB_ARGS": "--encoding=UTF-8 --lc-collate=C --lc-ctype=C"
+    "POSTGRES_DB": "${variable::database-name}"
   },
   "iconUrl": "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/postgresql/postgresql-original.svg"
 }
