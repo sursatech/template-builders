@@ -17,7 +17,7 @@ services:
   rag-chatbot-app:
     type: application
     order: 1
-    serviceUrl: "https://github.com/vercel-labs/ai-sdk-preview-rag.git"
+    serviceUrl: "https://github.com/sursakit-template/ai-sdk-preview-rag.git"
     iconUrl: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg"
     ports:
       - "3000:3000"
@@ -29,7 +29,7 @@ services:
       packages:
         - "node@22"
       installCommand: "npm install && npm run db:migrate"
-      startCommand: "npm run dev -- --host"
+      startCommand: "npm run dev -- --hostname 0.0.0.0 --port 3000"
       ports:
         - 3000
 
