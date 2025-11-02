@@ -23,7 +23,7 @@ services:
       - "3000:3000"
     environment:
       - __VITE_ADDITIONAL_SERVER_ALLOWED_HOSTS=.sursakit.app
-      - DATABASE_URL=${connectionString_production-db}
+      - DATABASE_URL=postgresql://${env::production-db::POSTGRES_USER}:${env::production-db::POSTGRES_PASSWORD}@${host::production-db}/${env::production-db::POSTGRES_DB}
       - AI_GATEWAY_API_KEY=${env_openai_OPENAI_API_KEY}
     buildConfig:
       packages:
@@ -47,7 +47,7 @@ services:
       - DB_TYPE=postgres
       - POSTGRES_USER=user
       - POSTGRES_PASSWORD=password
-      - POSTGRES_DB=employee_info
+      - POSTGRES_DB=rag
     buildConfig:
       aptPackages:
         - "postgresql-17-pgvector"
