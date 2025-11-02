@@ -19,5 +19,26 @@
       "production-db"
     ],
     "filename": "employee-app-starter-pack.yml"
+  },
+
+  {
+    "name": "Chatbot with RAG",
+    "techstacks": [
+      {
+        "name": "Node.js",
+        "iconUrl": "https://cdn.simpleicons.org/nodedotjs"
+      },
+      {
+        "name": "PostgreSQL",
+        "iconUrl": "https://cdn.simpleicons.org/postgresql"
+      }
+    ],
+    "description": "RAG-based chatbot with a frontend and a backend.",
+    "iconUrl": "https://ui-avatars.com/api/?name=Chatbot+with+RAG",
+    "services": [
+      "rag-chatbot-app",
+      "production-db"
+    ],
+    "filename": "rag-app-starter-pack.yml"
   }
 ]

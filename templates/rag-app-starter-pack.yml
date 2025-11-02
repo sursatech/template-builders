@@ -1,0 +1,53 @@
+version: "3.9"
+
+# 🔹 Main group metadata
+name: "Chatbot with RAG"
+description: "RAG-based chatbot with a frontend and a backend."
+techstacks:
+  - name: Node.js
+    iconUrl: "https://cdn.simpleicons.org/nodedotjs"
+  - name: PostgreSQL
+    iconUrl: "https://cdn.simpleicons.org/postgresql"
+iconUrl: "https://ui-avatars.com/api/?name=Chatbot+with+RAG"
+sharedVariable:
+  ENVIRONMENT: "production"
+  TIMEZONE: "UTC"
+
+services:
+  rag-chatbot-app:
+    type: application
+    order: 1
+    serviceUrl: "https://github.com/vercel-labs/ai-sdk-preview-rag.git"
+    iconUrl: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg"
+    ports:
+      - "3000:3000"
+    environment:
+      - __VITE_ADDITIONAL_SERVER_ALLOWED_HOSTS=.sursakit.app
+      - DATABASE_URL=${connectionString_production-db}
+      - AI_GATEWAY_API_KEY=${env_openai_OPENAI_API_KEY}
+    buildConfig:
+      packages:
+        - "node@22"
+      installCommand: "npm install && npm run db:migrate"
+      startCommand: "npm run dev -- --host"
+      ports:
+        - 3000
+
+  production-db:
+    type: database
+    order: 2
+    iconUrl: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/postgresql/postgresql-original.svg"
+    image: ghcr.io/railwayapp-templates/postgres-ssl:16
+    ports:
+      - "5432:5432"
+    volumes:
+      - db-data:/var/lib/postgresql/data
+    environment:
+      - DB_HOST=${host_production-db}
+      - DB_TYPE=postgres
+      - POSTGRES_USER=user
+      - POSTGRES_PASSWORD=password
+      - POSTGRES_DB=employee_info
+    buildConfig:
+      aptPackages:
+        - "postgresql-17-pgvector"
