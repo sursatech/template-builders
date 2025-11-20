@@ -37,7 +37,7 @@ services:
     type: database
     order: 2
     iconUrl: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/postgresql/postgresql-original.svg"
-    image: pgvector/pgvector:pg17
+    image: ...pgvector/pgvector:pg17
     ports:
       - "5432:5432"
     volumes:
