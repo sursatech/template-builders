@@ -37,7 +37,7 @@ services:
     type: database
     order: 2
     iconUrl: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/postgresql/postgresql-original.svg"
-    image: ghcr.io/railwayapp-templates/postgres-ssl:16
+    image: pgvector/pgvector:pg17
     ports:
       - "5432:5432"
     volumes:
@@ -48,6 +48,4 @@ services:
       - POSTGRES_USER=user
       - POSTGRES_PASSWORD=password
       - POSTGRES_DB=rag
-    buildConfig:
-      aptPackages:
-        - "postgresql-17-pgvector"
+
